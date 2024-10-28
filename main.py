@@ -5,7 +5,7 @@ import os
 
 load_dotenv()
 
-github_token = os.getenv('GITHUB_TOKEN')
+github_token = os.getenv("GITHUB_TOKEN")
 
 HEADERS = {'Authorization': f'token {github_token}'}
 
@@ -56,7 +56,7 @@ def fetch_users():
 def fetch_repositories(usernames):
     repos_data = []
     for username in usernames:
-        url = f'https://api.github.com/users/{username}/repos'
+        url = f'https://api.github.com/users/dhirajp1603/repos'
         response = requests.get(url, headers=HEADERS)
         response.raise_for_status()  # Check for request errors
         repos = response.json()
